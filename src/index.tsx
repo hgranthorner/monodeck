@@ -2,8 +2,7 @@ import {
   ButtonItem,
   PanelSection,
   PanelSectionRow,
-  Navigation,
-  staticClasses
+  staticClasses,
 } from "@decky/ui";
 import {
   addEventListener,
@@ -12,7 +11,7 @@ import {
   definePlugin,
   toaster,
   // routerHook
-} from "@decky/api"
+} from "@decky/api";
 import { useState } from "react";
 import { FaShip } from "react-icons/fa";
 
@@ -39,18 +38,12 @@ function Content() {
   return (
     <PanelSection title="Panel Section">
       <PanelSectionRow>
-        <ButtonItem
-          layout="below"
-          onClick={onClick}
-        >
+        <ButtonItem layout="below" onClick={onClick}>
           {result ?? "Add two numbers via Python"}
         </ButtonItem>
       </PanelSectionRow>
       <PanelSectionRow>
-        <ButtonItem
-          layout="below"
-          onClick={() => startTimer()}
-        >
+        <ButtonItem layout="below" onClick={() => startTimer()}>
           {"Start Python timer"}
         </ButtonItem>
       </PanelSectionRow>
@@ -74,25 +67,25 @@ function Content() {
       </PanelSectionRow>*/}
     </PanelSection>
   );
-};
+}
 
 export default definePlugin(() => {
-  console.log("Template plugin initializing, this is called once on frontend startup")
+  console.log(
+    "Template plugin initializing, this is called once on frontend startup",
+  );
 
   // serverApi.routerHook.addRoute("/decky-plugin-test", DeckyPluginRouterTest, {
   //   exact: true,
   // });
 
   // Add an event listener to the "timer_event" event from the backend
-  const listener = addEventListener<[
-    test1: string,
-    test2: boolean,
-    test3: number
-  ]>("timer_event", (test1, test2, test3) => {
-    console.log("Template got timer_event with:", test1, test2, test3)
+  const listener = addEventListener<
+    [test1: string, test2: boolean, test3: number]
+  >("timer_event", (test1, test2, test3) => {
+    console.log("Template got timer_event with:", test1, test2, test3);
     toaster.toast({
       title: "template got timer_event",
-      body: `${test1}, ${test2}, ${test3}`
+      body: `${test1}, ${test2}, ${test3}`,
     });
   });
 
@@ -107,7 +100,7 @@ export default definePlugin(() => {
     icon: <FaShip />,
     // The function triggered when your plugin unloads
     onDismount() {
-      console.log("Unloading")
+      console.log("Unloading");
       removeEventListener("timer_event", listener);
       // serverApi.routerHook.removeRoute("/decky-plugin-test");
     },

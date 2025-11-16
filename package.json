@@ -1,7 +1,7 @@
 {
-  "name": "decky-plugin-template",
+  "name": "monodeck",
   "version": "0.0.1",
-  "description": "A template to quickly create decky plugins from scratch, based on TypeScript and webpack",
+  "description": "Easily toggle mono audio on your Steam Deck.",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
@@ -10,19 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SteamDeckHomebrew/decky-plugin-template.git"
+    "url": "git+https://github.com/hgranthorner/monodeck.git"
   },
   "keywords": [
     "decky",
     "plugin",
     "plugin-template",
     "steam-deck",
-    "deck"
+    "deck",
+    "audio",
+    "mono",
+    "stero"
   ],
-  "author": "You <you@you.tld>",
+  "author": "Grant Horner <h.grant.horner@gmail.com>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/SteamDeckHomebrew/decky-plugin-template/issues"
+    "url": "https://github.com/hgranthorner/monodeck/issues"
   },
   "homepage": "https://github.com/SteamDeckHomebrew/decky-plugin-template#readme",
   "devDependencies": {
